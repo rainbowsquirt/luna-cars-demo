@@ -2,6 +2,7 @@
 <html lang="ru" class="is-static">
 <head>
 <meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>LUNA CARS Prototype</title>
 <link rel="preload" href="fonts/MedeoSansVariable.woff2" as="font" type="font/woff2" crossorigin>
@@ -11,19 +12,15 @@
 
 <header class="hdr" id="hdr">
   <div class="hdr__inner">
-    <div class="hdr__logo">
-      <a class="logo" href="#top" aria-label="LUNA CARS, наверх">
-        <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9977 20.9156C12.4055 22.5081 10.2458 23.4028 7.99381 23.4028H1.99987V14.4228H7.79081L14.2122 8.0002L20.5627 14.3494L13.9977 20.9156ZM31.5977 23.117C34.0326 20.6821 37.4894 19.4751 41.5293 19.4751H46.8984V10.4951H41.5293C35.7374 10.4951 29.7651 12.2499 25.2479 16.7671L17.0305 24.9846C14.6565 27.3585 11.2507 28.4731 7.09895 28.4731H1.99976V37.4531H7.09895C12.779 37.4531 18.8021 35.9126 23.3803 31.3344L31.5977 23.117ZM40.9041 24.5283C38.6522 24.5283 36.4925 25.423 34.9002 27.0155L28.3353 33.5817L34.6857 39.931L41.1071 33.5083H46.8981V24.5283H40.9041Z" fill="currentColor"/></svg>
-      </a>
-    </div>
-    <span class="hdr__space hdr__space--l"></span>
+    <a class="logo" href="#top" aria-label="LUNA CARS, наверх">
+      <svg viewBox="0 0 48 48" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M13.9977 20.9156C12.4055 22.5081 10.2458 23.4028 7.99381 23.4028H1.99987V14.4228H7.79081L14.2122 8.0002L20.5627 14.3494L13.9977 20.9156ZM31.5977 23.117C34.0326 20.6821 37.4894 19.4751 41.5293 19.4751H46.8984V10.4951H41.5293C35.7374 10.4951 29.7651 12.2499 25.2479 16.7671L17.0305 24.9846C14.6565 27.3585 11.2507 28.4731 7.09895 28.4731H1.99976V37.4531H7.09895C12.779 37.4531 18.8021 35.9126 23.3803 31.3344L31.5977 23.117ZM40.9041 24.5283C38.6522 24.5283 36.4925 25.423 34.9002 27.0155L28.3353 33.5817L34.6857 39.931L41.1071 33.5083H46.8981V24.5283H40.9041Z" fill="currentColor"/></svg>
+    </a>
     <nav class="nav" aria-label="Разделы">
       <a href="#features">Что распознаёт</a>
       <a href="#scenarios">Сценарии</a>
       <a href="#integrations">Интеграции</a>
       <a href="#docs">Документация</a>
     </nav>
-    <span class="hdr__space hdr__space--r"></span>
     <div class="hdr__cta"><a class="btn btn--primary" href="#demo">Запросить демо</a></div>
   </div>
 </header>
@@ -31,9 +28,11 @@
 <main>
   <section class="hero" id="top">
     <div class="hero__pin wrap" id="heroPin">
+      <img class="hero__bg" src="assets/hero-lines.svg" alt="" aria-hidden="true">
+
       <div class="copy" id="copy">
         <span class="eyebrow">LUNA CARS · видеоаналитика транспорта</span>
-        <h1 class="display">Распознавание транспорта в&nbsp;реальном времени</h1>
+        <h1 class="display">Распознавание транспорта<br> в&nbsp;реальном времени</h1>
         <p class="lead">Госномер, марка, модель, цвет и тип ТС. Номера более 80 стран.</p>
         <div class="actions">
           <a class="btn btn--primary btn--l" href="#demo">Запросить демо</a>
@@ -42,25 +41,25 @@
       </div>
 
       <div class="stage" id="stage">
-        <aside class="panel" id="panel" data-state="done" aria-label="Пример распознавания">
-          <div class="panel__top">
-            <div class="panel__head"><span class="dot"></span><span class="panel__label" id="pLabel">Распознано</span></div>
-            <div class="prog"><span id="prog" style="width:100%"></span></div>
-          </div>
-          <div class="plate" id="plate">А 123 ВС 77</div>
-          <dl class="attrs" id="attrs"></dl>
-        </aside>
         <div class="target" id="target" aria-hidden="true">
           <div class="car" id="car">ВИДЕО · машина въезжает в кадр</div>
           <div class="frame" id="frame"></div>
           <span class="chip" id="chip">Легковой</span>
         </div>
+        <aside class="panel" id="panel" data-state="done" aria-label="Пример распознавания">
+          <div class="panel__top">
+            <div class="panel__head"><span class="dot"></span><span class="panel__label" id="pLabel">Распознано</span></div>
+            <div class="prog"><span id="prog" style="width:100%"></span></div>
+            <div class="plate" id="plate">А 123 ВС 77</div>
+          </div>
+          <dl class="attrs" id="attrs"></dl>
+        </aside>
       </div>
 
       <div class="bar">
         <span class="bar__cam">КАМЕРА 01 · LIVE</span>
         <span class="bar__hint" id="hint">Прокрутите
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 2.5v9M3.5 8l3.5 3.5L10.5 8" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
         </span>
         <span class="bar__clock" id="clock">00:00:00</span>
       </div>
@@ -70,8 +69,8 @@
   <div class="sheet">
     <section class="block wrap" id="features">
       <div class="sec-head" data-reveal>
-        <span class="eyebrow">02 · Что распознаёт</span>
-        <h2 class="h1">Вся информация о машине из одного кадра</h2>
+        <div class="sec-num"><span class="sec-num__n" aria-hidden="true">01</span><span class="eyebrow">Что распознаёт</span></div>
+        <h2 class="h2">Вся информация о&nbsp;машине<br> из&nbsp;одного кадра</h2>
         <p class="lead">LUNA CARS определяет госномер, марку, модель, цвет и тип транспортного средства и сохраняет каждое событие в базу.</p>
       </div>
       <div class="cards" data-stagger>
@@ -111,7 +110,7 @@
 
     <section class="block wrap" id="scenarios">
       <div class="sec-head" data-reveal>
-        <span class="eyebrow">03 · Сценарии</span>
+        <div class="sec-num"><span class="sec-num__n" aria-hidden="true">02</span><span class="eyebrow">Сценарии</span></div>
         <h2 class="h2">Для города, бизнеса и частных территорий</h2>
         <p class="lead">Одна система для разных задач: от контроля въезда на парковку до аналитики дорожного трафика.</p>
       </div>
